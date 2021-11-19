@@ -1,0 +1,396 @@
+
+body {
+    margin: 0;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* background-image: linear-gradient(to right, #306DA0 0%, #11ACDF 100%); */
+}
+
+
+.banner{
+	background-image: url(adimage/homebanner.png);
+	margin-bottom: 0;
+	padding-bottom: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-height:100vh;
+	color:white;
+}
+
+.broad{
+	background-image: linear-gradient(to right, #306DA0 0%, #11ACDF 100%);
+}
+
+li{
+	margin-bottom: 20px;
+}
+
+.login{
+	background-image: url('https://res.cloudinary.com/sleemkeen/image/upload/c_scale,q_39,w_1133/c_scale,q_39,w_1133/v1565724343/landing.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-height:100vh; 
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color:#ffff;
+	
+}
+
+
+.navbar .bg-light #mainNavBar{
+	background-color:transparent !important;
+
+}
+
+
+
+.navbar {
+	padding-top: 30px;
+	background-color:transparent !important;
+	transition: 1s
+}
+
+
+#banner-img{
+	position: absolute;
+	top:0;
+	right:0;
+	max-height:200vh;
+
+}
+
+@media (max-width: 1000px){
+ .navbar-collapse{
+	background-image: linear-gradient(to right, #306DA0 0%, #11ACDF 100%);
+    background-repeat: repeat-x;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    }
+}
+
+@media (max-width: 1200px){
+	#banner-img{
+		position: absolute;
+	   top:0;
+	   right:0;
+	  max-height:150vh;
+
+	}
+}
+@media (max-width: 900px) {
+	#banner-img{
+		position: absolute;
+	   top:0;
+	   right:0;
+	   max-height:500px;
+
+
+	}
+
+}
+
+@media (max-width: 800px) {
+	#banner-img{
+		position: absolute;
+	   top:0;
+	   right:0;
+	   display:none;
+
+	}
+
+}
+
+.next{
+	padding-top: 9em;
+	font-size: 0.8em;
+}
+
+
+
+.nav-colored{
+	background-image: linear-gradient(to right, #306DA0 0%, #11ACDF 100%);/*DA0246*/
+    background-repeat: repeat-x;
+    padding-bottom: 5px;
+    padding-top: 15px;
+	/*transition: background-color 3s;
+	background-color: rgba(0,0, 100, 0.5) !important;*/
+}
+
+
+
+.first{
+	border: 1px solid rgba(20,19, 250, 0.1);
+	background-color: rgba(20,19, 250, 0.1) ;
+	border-radius:80px;
+	padding:3px 5px;
+
+}
+
+.new{
+	border-radius: 60px;
+	padding: 0.4em	
+}
+
+.section{
+	background-color: #fff;
+}
+
+
+.output {
+  text-align:start;
+  /*font-family: 'Source Code Pro', monospace;*/
+  color:white;
+  font-weight: 20;
+  font-size: 10px;
+  font-family: sans-serif;
+
+ 
+}
+.blunt{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+/* h1 {
+    /*font-size:10px; */
+
+  /* } */
+
+/* Cursor Styling */
+
+.cursor::after {
+  content:'';
+  display:inline-block;
+  margin-left:3px;
+  background-color:white;
+  animation-name:blink;
+  animation-duration:0.5s;
+  animation-iteration-count: infinite;
+}
+
+h1.cursor::after {
+  height:28px;
+  width:2px;
+  
+}
+
+@keyframes blink {
+  0% {
+    opacity:1;
+  }
+  49% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+
+
+
+.carousel-indicators li{
+	display:inline-block;
+	width:15px;
+	background-color: #fff;
+    border-radius: 7px 0 7px 0;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+
+}
+
+.carousel-indicators .active{
+	
+	width:35px;
+	background-color: #3ECF8E;
+}
+.carousel-indicators{	
+    margin-right: 60%;
+    margin-left: 1%;
+  
+
+}
+
+.two{
+	margin-top: 5em;
+	text-align: center;
+	font-weight: 20;
+	margin-bottom: 5em;
+}
+
+
+.three{
+	/*background-image: url(https://res.cloudinary.com/sleemkeen/image/upload/v1565725083/section-primary.png)*/
+	background-image: linear-gradient(to right,  #11ACDF 20%, #DA0246 100%);/*DA0246*/
+	/*https://res.cloudinary.com/sleemkeen/image/upload/v1565725083/section-primary.png*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7em 0;
+    font-weight: 20;
+    color: white;
+}
+
+#lined{
+	padding-bottom: 30px;
+	border-bottom: 2px solid white;
+
+}
+#lin{
+	padding-bottom: 30px;
+	border-bottom: 2px solid black;
+}
+h3 {
+	margin-bottom: 65px;
+	
+}
+.four{
+	font-weight: 20;
+}
+
+.five{
+	background-image: linear-gradient(to right, #306DA0 0%, #11ACDF 100%);
+	padding:7rem 0;
+}
+
+.thin{
+	font-weight: 20;
+}
+
+.lines{
+	color: white;
+	
+}
+
+.styled{
+	list-style-type: none;
+	line-height: 2.3;
+	font-weight: 25;
+}
+.six{
+	color: #797979
+}
+
+footer:not(.footer-sm) .nav-social .nav-item{
+	padding-right: 0.2em !important
+}
+
+
+.space{
+	padding-bottom: 10px;
+}
+.spaces{
+	padding-top: 30px;
+}
+
+
+.fa-li {
+    left: -2em;
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    line-height: inherit;
+}
+
+
+.pricings .card {
+	border: none;
+	border-radius: 1rem;
+	transition: all 0.2s;
+	box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricings hr {
+	margin: 1.5rem 0;
+}
+
+.pricings .card-title {
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+	letter-spacing: .1rem;
+	font-weight: bold;
+}
+
+.pricings .card-price {
+	font-size: 3rem;
+	margin: 0;
+}
+
+.pricings .card-price .period {
+	font-size: 0.8rem;
+}
+
+.pricings ul li {
+	margin-bottom: 1rem;
+}
+
+.pricings .text-muted {
+	opacity: 0.7;
+}
+
+.pricings .btn {
+	font-size: 80%;
+	border-radius: 5rem;
+	letter-spacing: .1rem;
+	font-weight: bold;
+	padding: 1rem;
+	opacity: 0.7;
+	transition: all 0.2s;
+}
+ #pricing-tab a{
+	color:#fff !important;
+  }
+
+   #pricing-tab .active{
+	color:#000 !important;
+  }
+  .none{
+	display: none;
+  }
+
+
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+	.pricings .card:hover {
+	  margin-top: -.25rem;
+	  margin-bottom: .25rem;
+	  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  .pricings .card:hover .btn {
+	  opacity: 1;
+  }
+
+}
+
+.lighter{
+	background-color: #fff;
+}
+.menew1{
+	background-color:#306DA0;
+}
+.menew2:hover{
+	background-color:#306DA0;
+	 padding-top: -.25rem;
+	  padding-bottom: -.25rem;
+	  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);	  
+}
+.menew1:hover{
+	background-color:#306DA0;
+	 padding-top: -.25rem;
+	  margin-bottom: -.25rem;
+	  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+/* 172.16.1.21
+              54.214.203.207 -->
+            193.233.4.27 --> */
