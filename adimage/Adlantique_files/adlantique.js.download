@@ -1,0 +1,153 @@
+"use strict";
+
+function listen() {
+    var e;
+    return (e = $("body")).on.apply(e, arguments)
+}
+
+function live() {
+    var e;
+    (e = $(window)).on.apply(e, arguments)
+}
+
+function getBackgroundSizes() {
+    $("[data-background-size]").each(function(e, t) {
+        var i = $(this).data("background-size");
+        $(this).css({
+            backgroundSize: function() {
+                return $(i).outerWidth()
+            }
+        })
+    })
+}
+
+function positionAppElements() {
+    var e = $(".navbar").outerHeight(),
+        t = $(".page-header").outerHeight();
+    if ($("body").is("#app") || (e = 0), $(window).width() < 768) return $("body").removeClass("overflow-hidden").css({
+        paddingTop: e
+    }), !1;
+    $(".page-header").css({
+        top: e
+    });
+    var i = e + t;
+    $(".campaign-sidebar").css({
+        top: i
+    }), $("body").css({
+        paddingTop: i
+    }), $(".campaign-sidebar, .main-a").css("height", $(window).height() - i + "px"), console.log($(window).height() - i)
+}
+$(function() {
+    getBackgroundSizes(), $.fn.select2 && $(".select2").select2({
+        minimumResultsForSearch: -1,
+        templateResult: function(e) {
+            return e.text
+        }
+    }), $(".select-medium .medium").each(function(e, t) {
+        var i = $(t);
+        i.is(".active") ? i.find("img").attr("src", i.attr("data-active-url")) : i.find("img").attr("src", i.attr("data-url")), i.find("input:checkbox").change(function() {
+            i.toggleClass("active"), i.is(".active") ? i.find("img").attr("src", i.attr("data-active-url")) : i.find("img").attr("src", i.attr("data-url"))
+        })
+    }), listen("mouseenter", ".pricing-3-table", function() {
+        $(this).addClass("pricing-3-table-special").siblings().removeClass("pricing-3-table-special")
+    }), positionAppElements()
+}), live("resize", function() {
+    getBackgroundSizes()
+}), live("scroll resize", function() {
+    var e = $(".navbar.fixed-top.navbar-trans");
+    30 < $(window).scrollTop() ? e.addClass("navbar-sticky") : e.removeClass("navbar-sticky"), positionAppElements()
+}), $.fn.owlCarousel && $(".banner-slide").owlCarousel({
+    autoPlay: !1,
+    nav: !1
+}), $.fn.typewriter = function(e) {
+    var t = e.sentences,
+        i = void 0 === t ? [] : t,
+        s = e.timeout,
+        n = void 0 === s ? 2e3 : s,
+        r = e.wait,
+        a = void 0 === r ? 5e3 : r,
+        o = e.reverseTime,
+        l = void 0 === o ? 500 : o;
+    return this.sentences = this.sentences ? this.sentences.concat(i) : i, this.typewriterIndex = this.typewriterIndex ? this.typewriterIndex : 0, this.timeout = n, this.reverseTime = l, this.wait = a, this.isPlaying = !1, this.isPaused = !1, this.typewriterInterval = !1, this.next = function() {
+        console.log("trigger"), this.typewriterIndex++, this.typewriterIndex >= this.sentences.length && (this.typewriterIndex = 0), this.trigger("next.typewriter", {
+            index: this.typewriterIndex
+        }), this.pause(), this.play()
+    }, this.pause = function() {
+        this.isPlaying = !1, this.isPaused = !0, clearInterval(this.typewriterInterval)
+    }, this.play = function() {
+        var e = this;
+        this.isPlaying = !0, this.isPaused = !1, this.html("");
+        var t = 0;
+        this.typewriterInterval = setInterval(function() {
+            e.html(e.html() + e.sentences[e.typewriterIndex][t++]), t >= e.sentences[e.typewriterIndex].length && (e.pause(), setTimeout(function() {
+                e.reverse()
+            }, e.wait), e.trigger("typed.typewriter", {
+                index: e.typewriterIndex
+            }))
+        }, this.getTypewriterInterval())
+    }, this.reverse = function() {
+        var e = this;
+        this.html(this.sentences[this.typewriterIndex]);
+        var t = this.sentences[this.typewriterIndex].length;
+        this.typewriterInterval = setInterval(function() {
+            e.html(e.html().substring(0, t--)), t <= 0 && (e.pause(), setTimeout(function() {
+                e.next()
+            }, 0))
+        }, this.getTypewriterReverseInterval())
+    }, this.getTypewriterInterval = function() {
+        return this.timeout / this.sentences[this.typewriterIndex].length
+    }, this.getTypewriterReverseInterval = function() {
+        return this.reverseTime / this.sentences[this.typewriterIndex].length
+    }, this.play(), this
+};
+var sentences = [{
+    title: "Let your target audience find you",
+    paragraph: ""
+}, {
+    title: "The practical alternative to business growth",
+    paragraph: ""
+}, {
+    title: "Advertise anywhere and whenever at a go",
+    paragraph: ""
+}, {
+    title: "Flexible advertising plans for every business",
+    paragraph: ""
+}, {
+    title: "Adlantique never stops working for you",
+    paragraph: ""
+}, {
+    title: "More control, Greater results, Lower costs",
+    paragraph: ""
+}];
+$(".typewriter").each(function(e, t) {
+    $(t).typewriter({
+        sentences: sentences.map(function(e) {
+            return e.title
+        })
+    }).on("typed.typewriter", function(e, t) {
+        var i = t.index;
+        console.log("listen"), $(".banner-slide").trigger("next.owl.carousel"), $(".slide-nav > .slide-nav-item").removeClass("active").eq(i).addClass("active")
+    })
+}), $.fn.open = function() {
+    switch (0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : "toggle") {
+        case "show":
+            this.addClass("open");
+            break;
+        case "hide":
+            this.removeClass("open");
+            break;
+        default:
+            this.is(".open") ? this.open("hide") : this.open("show")
+    }
+}, listen("click", '[data-toggle="sidebar"]', function(e) {
+    $(".campaign-sidebar, .settings-sidebar").open("toggle")
+}), $("[data-scroll]").click(function(e) {
+    e.preventDefault();
+    var t = $(this).attr("href") || $(this).data("target");
+    if (!(t = $(t)).length) return !1;
+    var i = t.closest("[data-spy]");
+    return i.animate({
+        scrollTop: t.offset().top - i.offset().top
+    }), !1
+});
+//# sourceMappingURL=adlantique-dist.js.map
